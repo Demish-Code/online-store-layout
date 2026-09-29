@@ -1,0 +1,374 @@
+/* Шапка с фоном*/
+.hero-page_catalog {
+    background-image: url(./img/bg-catalog.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-page_catalog .hero-page__container {
+    height: 400px;
+}
+
+.hero-page_catalog .hero-page__content {
+    height: calc(400px - 76px);
+    padding-top: 127px;
+    padding-bottom: 126px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.hero-page_catalog .hero-page__title {
+    margin: 0;
+}
+
+/* Ссылки главная и каталог*/
+.catalog-top {
+    margin-top: 70px;
+    margin-bottom: 36px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+}
+
+.catalog-top__controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.product-box_catalog {
+    margin-top: 0;
+}
+
+.catalog-top__links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.catalog-top__link {
+    font-size: 16px;
+    line-height: 32px;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.catalog-top__link:hover {
+  color: #888888;
+}
+
+.catalog-top__slash {
+    font-size: 16px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.catalog-top__select {
+    padding: 9px 54px 11px 23px;
+    appearance: none;
+    background-color: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 20px;
+    padding: 10px 40px 10px 14px;
+    font-family: "Montserrat", "Arial";
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 19px;
+    outline: none;
+    cursor: pointer;
+}
+
+.catalog-top__select_filter {
+    font-weight: 500;
+    padding: 9px 54px 11px 23px;
+}
+
+.catalog-top__select_sort {
+    padding: 9px 56px 11px 23px;
+}
+
+
+.filter-wrapper {
+    position: relative;
+}
+
+
+.filtering-form {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    width: 525px;
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 24px 32px;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+/* Левая колонка */
+.filtering-form__fieldset_delivery,
+.filtering-form__fieldset_price,
+.filtering-form__fieldset_colors {
+    grid-column: 1;
+}
+
+/* Правая колонка — Тип комнаты на все 3 строки */
+.filtering-form__fieldset_rooms {
+    grid-column: 2;
+    grid-row: 1 / 4;
+}
+
+/* Кнопка "Применить" на всю ширину */
+.filtering-form__submit {
+    grid-column: 1 / -1;
+    justify-self: center; 
+    transition: background-color 0.3s, color 0.3s;  
+}
+
+.filter-wrapper {
+    position: relative;
+}
+
+.filtering-form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Заголовок группы (Сроки доставки) */
+.filtering-form__legend {
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.filtering-form__fieldset_colors {
+  display: grid;
+  grid-template-columns: repeat(7, 15px);
+  gap: 14px;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;             
+    cursor: pointer;
+}
+
+.checkbox__label::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.filtering-form__fieldset_colors .checkbox__label {
+  display: block;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* ЦВЕТНОЙ ЧЕКБОКС */
+
+/* квадратик-якорь */
+.checkbox_color .checkbox__label {
+    display: block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* у цветного НЕ рисуем квадратик-рамку через ::before */
+.checkbox_color .checkbox__label::before {
+    display: none;
+}
+
+/* галочка существует, но скрыта */
+.checkbox_color .checkbox__label::after {
+    content: "✓";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: 12px;
+    line-height: 1;
+}
+
+/* при выборе — показать */
+.checkbox_color .checkbox__input:checked + .checkbox__label::after {
+    opacity: 1;
+}
+
+/* ЦВЕТА */
+
+.checkbox_white .checkbox__label {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+}
+.checkbox_black .checkbox__label { background-color: #000000; }
+.checkbox_grey .checkbox__label { background-color: #737373; }
+.checkbox_red .checkbox__label { background-color: #FF0000; }
+.checkbox_orange .checkbox__label { background-color: #FF7A41; }
+.checkbox_yellow .checkbox__label { background-color: #F2CB01; }
+.checkbox_green .checkbox__label { background-color: #00BF2A; }
+.checkbox_turquoise .checkbox__label { background-color: #1CCC97; }
+.checkbox_blue .checkbox__label { background-color: #009FE3; }
+.checkbox_darkblue .checkbox__label { background-color: #000AF8; }
+.checkbox_purple .checkbox__label { background-color: #6710D6; }
+.checkbox_violet .checkbox__label { background-color: #9D0DB5; }
+.checkbox_lilac .checkbox__label { background-color: #D89AFF; }
+.checkbox_pink .checkbox__label { background-color: #FF65A6; }
+
+/* белая галочка на тёмных фонах */
+.checkbox_black .checkbox__label::after { color: #fff; }
+
+.checkbox__input:checked + .checkbox__label::before {
+    content: "✓";
+}
+
+/* === РАДИОКНОПКИ === */
+
+.radio__input {
+    display: none;
+}
+
+.radio__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.radio__label::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.radio__input:checked + .radio__label::before {
+    content: '✓';
+}
+
+.filtering-form__submit {
+    width: 190px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 50px; 
+    background-color: transparent; 
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    color: #000000;
+    grid-column: 2;
+    justify-self: center;            
+    margin-top: 4px
+}
+
+.filtering-form__submit:hover {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* СЛАЙДЕР ЦЕНЫ */
+
+.filtering-form__fieldset_price {
+    position: relative;
+}
+
+/* Текст диапазона */
+.filtering-form__fieldset_price p {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+/* Контейнер для слайдеров — чтобы они легли друг на друга */
+.filtering-form__fieldset_price input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+/* Второй слайдер ложится поверх первого */
+.filtering-form__fieldset_price input[type="range"]:last-of-type {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Бегунок (Chrome / Edge / Safari) */
+.filtering-form__fieldset_price input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* Бегунок (Firefox) */
+.filtering-form__fieldset_price input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    pointer-events: auto;
+}
+
+.filtering-form__price-range {
+    display: flex;
+    justify-content: space-between;
+}
